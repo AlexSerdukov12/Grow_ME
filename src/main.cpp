@@ -15,7 +15,7 @@
 
   // Set the hours of operation for the relay
   const int ON_HOUR = 6; // set the on hour
-const int OFF_HOUR = 19; // set the off hour
+const int OFF_HOUR = 22; // set the off hour
 
   ////// objects
   KY015_Sensor ky015Sensor(10);
@@ -46,7 +46,7 @@ const int OFF_HOUR = 19; // set the off hour
     } else {
       Serial.print("Temperature: ");
       Serial.print(temperature);
-      Serial.println("°C");
+      Serial.println(" C");
       Serial.print("Humidity: ");
       Serial.print(humidity);
       Serial.println("%");
@@ -64,13 +64,12 @@ const int OFF_HOUR = 19; // set the off hour
     }
 
     ///////////////////////////////// LDR + RELAY FOR LEDS
-  time_t now = time(NULL); // get the current time
-  struct tm *currentTime = localtime(&now);
-  int currentHour = currentTime->tm_hour; // get the current hour
 
-  if (currentHour >= ON_HOUR && currentHour < OFF_HOUR) {
+
+  if (true) {
     int value = analogRead(LDRInput); //Reads the Value of LDR(light).
-    if (value >= 0 && value <= 1023) {
+    if (value >= 0 && value <= 1023)
+     {
       Serial.print("LDR value is: ");
       Serial.println(value);
       if (value < 300) {
@@ -80,9 +79,10 @@ const int OFF_HOUR = 19; // set the off hour
         digitalWrite(LED, LOW); //The LED turns OFF in Light.
         Serial.println("Turning off relay LED.");
       }
-    } else {
-      Serial.println("Error: LDR sensor not working properly.");
-    }
+    } else 
+          {
+          Serial.println("Error: LDR sensor not working properly.");
+          }
   } else {
     digitalWrite(LED, LOW); //The LED turns OFF when it's not between on hour and off hour.
   }
