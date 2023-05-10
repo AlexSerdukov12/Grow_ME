@@ -19,3 +19,8 @@ Progress of Prototype
 
 ![08 05 2023 update](https://user-images.githubusercontent.com/73774191/236766329-35e8e72f-be6c-40be-8a35-999a148492ae.jpg)
 
+10/05/2023 update - ADDED ESP32-CAM 
+
+![image](https://github.com/AlexSerdukov12/Grow_ME/assets/73774191/1ec0ac92-1294-4121-b36b-62b5c7adca91)
+
+
