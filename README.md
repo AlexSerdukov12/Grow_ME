@@ -9,7 +9,7 @@ Arduino Sensors:
 * LDR
 * Temp & Humidity
 * ESP32-cam
-* Esp8266 WIFI
+* Esp8266 WIFI (changed it to cable)
 * LED 220V with connect to REALY
 * Water Pump
 
