@@ -14,7 +14,7 @@ Arduino Sensors:
 * Water Pump
 
 storage :
-local disk
+local disk ,
 cloud:
 FireBase
 
