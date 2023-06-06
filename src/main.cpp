@@ -3,19 +3,26 @@
   #include <sensors/WaterLevelSensor.h>
   #include <sensors/PHSensor.h>
   #include <time.h>
-
   ////PINS
+  #define POWER_PIN  3  // water
+  #define SIGNAL_PIN A5 // water
+  #define SENSOR_MIN 0 // water
+  #define SENSOR_MAX 610 // water
+
   const int LDRInput = A0; //Set Analog Input A0 for LDR.
-  const int PH_SENSOR_PIN = A1;
+  const int PH_SENSOR_PIN = A3;
   const int LED = 2;
-  const int WATER_SENSOR_PIN = A5;
+  const int WATER_SENSOR_PIN = A4;
 
   //// some variables
   float PH_CALIBRATION_VALUE = 21.34 - 0.7;
 
+  int value = 0; // variable to store the water sensor value
+  int level = 0; // variable to store the water level
+
   // Set the hours of operation for the relay
   const int ON_HOUR = 6; // set the on hour
-const int OFF_HOUR = 22; // set the off hour
+  const int OFF_HOUR = 22; // set the off hour
 
   ////// objects
   KY015_Sensor ky015Sensor(10);
@@ -30,7 +37,8 @@ const int OFF_HOUR = 22; // set the off hour
     fanControl.begin();
     pinMode(LDRInput, INPUT);
     pinMode(LED, OUTPUT);
-    waterLevelSensor.begin();
+    pinMode(POWER_PIN, OUTPUT);   // configure D7 pin as an OUTPUT WATER SENSOR 
+   digitalWrite(POWER_PIN, LOW); // turn the sensor OFF WATER SENSOR
 
 
   }
@@ -40,62 +48,60 @@ const int OFF_HOUR = 22; // set the off hour
     ///// TEMP and Humidity
     float temperature = ky015Sensor.getTemperature();
     float humidity = ky015Sensor.getHumidity();
-    if (ky015Sensor.isError()) {
-      Serial.println("Error: KY015 Sensor not found.");
-      fanControl.update(0);
-    } else {
-      Serial.print("Temperature: ");
-      Serial.print(temperature);
-      Serial.println(" C");
-      Serial.print("Humidity: ");
-      Serial.print(humidity);
-      Serial.println("%");
-      fanControl.update(temperature);
-    }
-
-  
-  /////////////////////WATER SENSOR
-
-    waterLevelSensor.update();
-    if (waterLevelSensor.isError()) {
-      Serial.println("Error: Water level sensor not working.");
-    } else {
-      waterLevelSensor.getCurrentLevel();
-    }
-
+   
+     
     ///////////////////////////////// LDR + RELAY FOR LEDS
 
 
-  if (true) {
-    int value = analogRead(LDRInput); //Reads the Value of LDR(light).
-    if (value >= 0 && value <= 1023)
-     {
-      Serial.print("LDR value is: ");
-      Serial.println(value);
-      if (value < 300) {
-        digitalWrite(LED, HIGH); //The LED turns ON in Dark.
-        Serial.println("Turning on relay LED.");
-      } else {
-        digitalWrite(LED, LOW); //The LED turns OFF in Light.
-        Serial.println("Turning off relay LED.");
-      }
-    } else 
-          {
-          Serial.println("Error: LDR sensor not working properly.");
-          }
-  } else {
-    digitalWrite(LED, LOW); //The LED turns OFF when it's not between on hour and off hour.
-  }
-
 
   ////////////////////////////////PH SENSOR
-    if(phSensor.getPHValue()<2||phSensor.getPHValue()>12 ) {    Serial.println("Error: PH sensor not working properly.");
-    }
-    else{Serial.print("PH value:");
-    Serial.println(phSensor.getPHValue());
-    }
+  
 
+  /////////////////////WATER SENSOR
+  digitalWrite(POWER_PIN, HIGH);   // turn the sensor ON
+  delay(10);                       // wait 10 milliseconds
+  value = analogRead(SIGNAL_PIN);  // read the analog value from sensor
+  digitalWrite(POWER_PIN, LOW);    // turn the sensor OFF
+
+ 
+  
   ///////////////////////////////////////////////
-    Serial.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-    delay(2000);
+  
+
+    Serial.print("Temperature: ");
+    Serial.print(temperature);
+    Serial.println(" C");
+    Serial.print("Humidity: ");
+    Serial.print(humidity);
+    Serial.println("%");
+    fanControl.update(temperature);
+    int waterLevel = map(value, SENSOR_MIN, SENSOR_MAX, 0, 100); // map the value to a percentage (0-100)
+    Serial.print("Water level : ");
+    Serial.print(waterLevel);
+    Serial.println("%");
+    
+    if (true) {
+      int value = analogRead(LDRInput); //Reads the Value of LDR(light).
+      if (value >= 0 && value <= 1023)
+      {
+        Serial.print("LDR value is: ");
+        Serial.println(value);
+        if (value < 300) {
+          digitalWrite(LED, HIGH); //The LED turns ON in Dark.
+          Serial.println("LED : ON");
+        } else {
+          digitalWrite(LED, LOW); //The LED turns OFF in Light.
+          Serial.println("LED : OFF");
+        }
+      } 
+    } else {
+      digitalWrite(LED, LOW); //The LED turns OFF when it's not between on hour and off hour.
+    }
+    Serial.print("PH value:");
+    Serial.println(phSensor.getPHValue());
+      
+
+
+
+    delay(10000);
   }

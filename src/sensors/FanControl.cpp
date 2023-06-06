@@ -18,12 +18,12 @@ void FanControl::update(float temperature) {
     digitalWrite(INB1, HIGH);
     digitalWrite(INA2, HIGH);
     digitalWrite(INB2, LOW);
-    Serial.println("Fans turned on");
+    Serial.println("Fans : ON");
   } else {
     digitalWrite(INA1, LOW);
     digitalWrite(INB1, LOW);
     digitalWrite(INA2, LOW);
     digitalWrite(INB2, LOW);
-    Serial.println("Fans turned off");
+    Serial.println("Fans : OFF");
   }
 }
