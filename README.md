@@ -30,4 +30,10 @@ Progress of Prototype
 
 ![image](https://github.com/AlexSerdukov12/Grow_ME/assets/73774191/1ec0ac92-1294-4121-b36b-62b5c7adca91)
 
+08/06/2023 update - added firebase control , anayliz the data 
+
+![sensir data](https://github.com/AlexSerdukov12/Grow_ME/assets/73774191/908c4b45-477a-4101-9bc7-b80472ecf200)
+![stats](https://github.com/AlexSerdukov12/Grow_ME/assets/73774191/d0e00783-3da9-4120-9e34-e8041b40e045)
+
+
 
