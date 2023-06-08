@@ -1,0 +1,28 @@
+Temperature: 26.80
+Humidity: 66.00
+Fans : 0
+Water level : 119
+LDR value is: 0
+LED : 1
+PH value:4.79
+Temperature: 30
+Humidity: 20
+Fans : 1
+Water level : 119
+LDR value is: 1000
+LED : 0
+PH value:15
+Temperature: 4
+Humidity: 1
+Fans : 0
+Water level : 119
+LDR value is: 1
+LED : 1
+PH value:150
+Temperature: 43
+Humidity: 133
+Fans : 1
+Water level : 1193
+LDR value is: 144
+LED : 0
+PH value:1500

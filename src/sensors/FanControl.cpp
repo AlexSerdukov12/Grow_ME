@@ -13,17 +13,17 @@ void FanControl::begin() {
 }
 
 void FanControl::update(float temperature) {
-  if (temperature > 25) {
+  if (temperature > 28) {
     digitalWrite(INA1, LOW);
     digitalWrite(INB1, HIGH);
     digitalWrite(INA2, HIGH);
     digitalWrite(INB2, LOW);
-    Serial.println("Fans : ON");
+    Serial.println("Fans : 1");
   } else {
     digitalWrite(INA1, LOW);
     digitalWrite(INB1, LOW);
     digitalWrite(INA2, LOW);
     digitalWrite(INB2, LOW);
-    Serial.println("Fans : OFF");
+    Serial.println("Fans : 0");
   }
 }

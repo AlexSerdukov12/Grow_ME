@@ -1,74 +1,52 @@
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
+import time
 
-def initialize_firebase():
-    # Path to your service account key JSON file
-    cred = credentials.Certificate('C:/Users/alex/Desktop/growme-fc746-firebase-adminsdk-t0msz-c3ddad6207.json')
+# Fetch the service account key JSON file and database URL from Firebase console
+cred = credentials.Certificate('C:/Users/alex/Desktop/growme-fc746-firebase-adminsdk-t0msz-c3ddad6207.json')
+firebase_admin.initialize_app(cred, {
+    'databaseURL': 'https://growme-fc746-default-rtdb.europe-west1.firebasedatabase.app/'
+})
 
-    # Initialize the Firebase Admin SDK
-    firebase_admin.initialize_app(cred, {
-        'databaseURL': 'https://growme-fc746-default-rtdb.europe-west1.firebasedatabase.app/'
-    })
+# Path to the sensors data file
+file_path = 'C:/Users/alex/Documents/PlatformIO/Projects/Grow_ME/sensors_data.txt'
+def send_data_to_firebase(data):
+    # Send the data to the Firebase Realtime Database
+    db.reference('sensor-data').push().set(data)
+    print('Data sent to Firebase Realtime Database.')
 
-def send_file_contents(file_path):
-    # Read the contents of the file
+def read_data():
+    data = {}
     with open(file_path, 'r') as file:
-        file_content = file.read()
+        lines = file.readlines()
+        for line in lines:
+            if line.startswith('Temperature:'):
+                temperature = line.split(':')[1].strip()
+                data['Temperature'] = temperature
+            elif line.startswith('Humidity:'):
+                humidity = line.split(':')[1].strip()
+                data['Humidity'] = humidity
+            elif line.startswith('Fans :'):
+                fan_state = line.split(':')[1].strip()
+                data['Fans'] = fan_state
+            elif line.startswith('Water level :'):
+                water_level = line.split(':')[1].strip()
+                data['Water level'] = water_level
+            elif line.startswith('LDR value is:'):
+                ldr_value = line.split(':')[1].strip()
+                data['LDR value'] = ldr_value
+            elif line.startswith('LED :'):
+                led_state = line.split(':')[1].strip()
+                data['LED'] = led_state
+            elif line.startswith('PH value:'):
+                ph_value = line.split(':')[1].strip()
+                data['PH value'] = ph_value
 
-    # Get a reference to the Firebase Realtime Database root
-    ref = db.reference('/')
+    return data
 
-    # Push the file contents to the database and get the auto-generated key
-    new_data_ref = ref.push(file_content)
-    new_data_key = new_data_ref.key
-
-    return new_data_key
-def analyze_data():
-    # Get a reference to the Firebase Realtime Database root
-    ref = db.reference('/')
-
-    # Retrieve the data from the database
-    data = ref.get()
-
-    # Perform your analysis on the data
-    for key, value in data.items():
-        # Convert the values to appropriate data types
-        temperature = float(value.split('Temperature: ')[1].split(' C')[0])
-        humidity = float(value.split('Humidity: ')[1].split('%')[0])
-        fans = value.split('Fans : ')[1].split('\n')[0]
-        water_level = float(value.split('Water level : ')[1].split('%')[0])
-        ldr_value = int(value.split('LDR value is: ')[1].split('\n')[0])
-        led = value.split('LED : ')[1].split('\n')[0]
-        ph_value = float(value.split('PH value:')[1])
-
-        # Perform analysis based on the retrieved data
-        # Example: Calculate average temperature and humidity
-        # ...
-
-        # Print or store the analysis results
-        print('Data key:', key)
-        print('Temperature:', temperature)
-        print('Humidity:', humidity)
-        print('Fans:', fans)
-        print('Water level:', water_level)
-        print('LDR value:', ldr_value)
-        print('LED:', led)
-        print('PH value:', ph_value)
-        print('---')
-
-
-if __name__ == '__main__':
-    # Example usage
-    initialize_firebase()
-
-    # Specify the path to the text file
-    file_path = 'C:/Users/alex/Documents/PlatformIO/Projects/Grow_ME/sensors_reports.txt'
-
-    # Send the contents of the text file to the database
-    new_data_key = send_file_contents(file_path)
-
-    print('New data key:', new_data_key)
-
-    # Analyze the data
-    analyze_data()
+while True:
+    data = read_data()
+    if data:
+        send_data_to_firebase(data)
+    time.sleep(13)  # Wait for 10 seconds before reading the file again

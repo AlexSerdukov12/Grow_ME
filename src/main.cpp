@@ -68,17 +68,14 @@
   ///////////////////////////////////////////////
   
 
-    Serial.print("Temperature: ");
-    Serial.print(temperature);
-    Serial.println(" C");
-    Serial.print("Humidity: ");
-    Serial.print(humidity);
-    Serial.println("%");
+     Serial.print("Temperature: ");
+  Serial.println(temperature);
+  Serial.print("Humidity: ");
+  Serial.println(humidity);
     fanControl.update(temperature);
     int waterLevel = map(value, SENSOR_MIN, SENSOR_MAX, 0, 100); // map the value to a percentage (0-100)
-    Serial.print("Water level : ");
-    Serial.print(waterLevel);
-    Serial.println("%");
+     Serial.print("Water level : ");
+  Serial.println(waterLevel);
     
     if (true) {
       int value = analogRead(LDRInput); //Reads the Value of LDR(light).
@@ -88,20 +85,20 @@
         Serial.println(value);
         if (value < 300) {
           digitalWrite(LED, HIGH); //The LED turns ON in Dark.
-          Serial.println("LED : ON");
+          Serial.println("LED : 1");
         } else {
           digitalWrite(LED, LOW); //The LED turns OFF in Light.
-          Serial.println("LED : OFF");
+          Serial.println("LED : 0");
         }
       } 
     } else {
       digitalWrite(LED, LOW); //The LED turns OFF when it's not between on hour and off hour.
     }
-    Serial.print("PH value:");
-    Serial.println(phSensor.getPHValue());
+     Serial.print("PH value:");
+  Serial.println(phSensor.getPHValue());
       
 
 
 
-    delay(10000);
+    delay(10000); // wait 30 secs
   }
