@@ -11,10 +11,11 @@ firebase_admin.initialize_app(cred, {
 
 # Path to the sensors data file
 file_path = 'C:/Users/alex/Documents/PlatformIO/Projects/Grow_ME/sensors_data.txt'
+
 def send_data_to_firebase(data):
-    # Send the data to the Firebase Realtime Database
-    db.reference('sensor-data').push().set(data)
-    print('Data sent to Firebase Realtime Database.')
+    # Update the existing data in the Firebase Realtime Database
+    db.reference('sensor-data').update(data)
+    print('Data updated in Firebase Realtime Database.')
 
 def read_data():
     data = {}

@@ -1,28 +1,336 @@
-Temperature: 26.80
-Humidity: 66.00
+Temperature: 25.90
+Humidity: 67.00
 Fans : 0
-Water level : 119
+Water level : 78
 LDR value is: 0
 LED : 1
-PH value:4.79
-Temperature: 30
-Humidity: 20
-Fans : 1
-Water level : 119
-LDR value is: 1000
-LED : 0
-PH value:15
-Temperature: 4
-Humidity: 1
+PH value:8.98
+Temperature: 25.90
+Humidity: 67.00
 Fans : 0
-Water level : 119
-LDR value is: 1
+Water level : 89
+LDR value is: 15
 LED : 1
-PH value:150
-Temperature: 43
-Humidity: 133
-Fans : 1
-Water level : 1193
-LDR value is: 144
+PH value:8.35
+Temperature: 25.90
+Humidity: 67.00
+Fans : 0
+Water level : 88
+LDR value is: 15
+LED : 1
+PH value:8.21
+Temperature: 25.90
+Humidity: 67.00
+Fans : 0
+Water level : 89
+LDR value is: 16
+LED : 1
+PH value:8.06
+Temperature: 25.90
+Humidity: 67.00
+Fans : 0
+Water level : 88
+LDR value is: 15
+LED : 1
+PH value:7.86
+Temperature: 25.90
+Humidity: 67.00
+Fans : 0
+Water level : 87
+LDR value is: 81
+LED : 1
+PH value:7.84
+Temperature: 26.10
+Humidity: 68.00
+Fans : 0
+Water level : 88
+LDR value is: 17
+LED : 1
+PH value:7.72
+Temperature: 26.20
+Humidity: 68.00
+Fans : 0
+Water level : 88
+LDR value is: 49
+LED : 1
+PH value:7.86
+Temperature: 25.90
+Humidity: 73.00
+Fans : 0
+Water level : 87
+LDR value is: 445
 LED : 0
-PH value:1500
+PH value:7.58
+Temperature: 26.40
+Humidity: 68.00
+Fans : 0
+Water level : 87
+LDR value is: 0
+LED : 1
+PH value:7.57
+Temperature: 26.30
+Humidity: 67.00
+Fans : 0
+Water level : 87
+LDR value is: 15
+LED : 1
+PH value:7.83
+Temperature: 26.30
+Humidity: 67.00
+Fans : 0
+Water level : 88
+LDR value is: 15
+LED : 1
+PH value:7.65
+Temperature: 34.30
+Humidity: 95.00
+Fans : 1
+Water level : 88
+LDR value is: 134
+LED : 1
+PH value:9.10
+Temperature: 31.90
+Humidity: 95.00
+Fans : 1
+Water level : 92
+LDR value is: 129
+LED : 1
+PH value:10.39
+Temperature: 30.80
+Humidity: 95.00
+Fans : 1
+Water level : 93
+LDR value is: 144
+LED : 1
+PH value:10.82
+Temperature: 29.50
+Humidity: 95.00
+Fans : 1
+Water level : 92
+LDR value is: 138
+LED : 1
+PH value:7.23
+Temperature: 28.70
+Humidity: 95.00
+Fans : 1
+Water level : 88
+LDR value is: 128
+LED : 1
+PH value:6.89
+Temperature: 28.20
+Humidity: 93.00
+Fans : 1
+Water level : 86
+LDR value is: 137
+LED : 1
+PH value:6.38
+Temperature: 27.80
+Humidity: 91.00
+Fans : 0
+Water level : 82
+LDR value is: 11
+LED : 1
+PH value:6.15
+Temperature: 27.60
+Humidity: 91.00
+Fans : 0
+Water level : 74
+LDR value is: 13
+LED : 1
+PH value:5.85
+Temperature: 27.20
+Humidity: 89.00
+Fans : 0
+Water level : 72
+LDR value is: 13
+LED : 1
+PH value:5.70
+Temperature: 26.80
+Humidity: 88.00
+Fans : 0
+Water level : 70
+LDR value is: 13
+LED : 1
+PH value:5.44
+Temperature: 26.80
+Humidity: 88.00
+Fans : 0
+Water level : 69
+LDR value is: 13
+LED : 1
+PH value:5.57
+Temperature: 26.60
+Humidity: 87.00
+Fans : 0
+Water level : 69
+LDR value is: 14
+LED : 1
+PH value:5.51
+Temperature: 26.30
+Humidity: 86.00
+Fans : 0
+Water level : 69
+LDR value is: 14
+LED : 1
+PH value:5.55
+Temperature: 26.30
+Humidity: 84.00
+Fans : 0
+Water level : 69
+LDR value is: 15
+LED : 1
+PH value:5.41
+Temperature: 26.30
+Humidity: 84.00
+Fans : 0
+Water level : 69
+LDR value is: 14
+LED : 1
+PH value:5.46
+Temperature: 26.30
+Humidity: 83.00
+Fans : 0
+Water level : 67
+LDR value is: 15
+LED : 1
+PH value:5.56
+Temperature: 25.80
+Humidity: 83.00
+Fans : 0
+Water level : 67
+LDR value is: 14
+LED : 1
+PH value:5.54
+Temperature: 25.90
+Humidity: 81.00
+Fans : 0
+Water level : 67
+LDR value is: 14
+LED : 1
+PH value:5.47
+Temperature: 25.80
+Humidity: 80.00
+Fans : 0
+Water level : 68
+LDR value is: 15
+LED : 1
+PH value:5.51
+Temperature: 25.90
+Humidity: 80.00
+Fans : 0
+Water level : 67
+LDR value is: 14
+LED : 1
+PH value:5.46
+Temperature: 25.70
+Humidity: 79.00
+Fans : 0
+Water level : 68
+LDR value is: 14
+LED : 1
+PH value:5.49
+Temperature: 25.80
+Humidity: 78.00
+Fans : 0
+Water level : 68
+LDR value is: 14
+LED : 1
+PH value:5.51
+Temperature: 25.70
+Humidity: 76.00
+Fans : 0
+Water level : 69
+LDR value is: 14
+LED : 1
+PH value:5.51
+Temperature: 25.60
+Humidity: 76.00
+Fans : 0
+Water level : 69
+LDR value is: 15
+LED : 1
+PH value:5.48
+Temperature: 25.70
+Humidity: 75.00
+Fans : 0
+Water level : 68
+LDR value is: 14
+LED : 1
+PH value:5.44
+Temperature: 25.60
+Humidity: 75.00
+Fans : 0
+Water level : 68
+LDR value is: 14
+LED : 1
+PH value:5.43
+Temperature: 25.60
+Humidity: 74.00
+Fans : 0
+Water level : 67
+LDR value is: 15
+LED : 1
+PH value:5.50
+Temperature: 25.60
+Humidity: 73.00
+Fans : 0
+Water level : 67
+LDR value is: 14
+LED : 1
+PH value:5.48
+Temperature: 25.60
+Humidity: 72.00
+Fans : 0
+Water level : 67
+LDR value is: 14
+LED : 1
+PH value:5.47
+Temperature: 25.70
+Humidity: 73.00
+Fans : 0
+Water level : 82
+LDR value is: 14
+LED : 1
+PH value:6.60
+Temperature: 25.90
+Humidity: 73.00
+Fans : 0
+Water level : 85
+LDR value is: 14
+LED : 1
+PH value:6.84
+Temperature: 25.90
+Humidity: 72.00
+Fans : 0
+Water level : 85
+LDR value is: 14
+LED : 1
+PH value:6.89
+Temperature: 25.90
+Humidity: 71.00
+Fans : 0
+Water level : 86
+LDR value is: 14
+LED : 1
+PH value:6.97
+Temperature: 25.90
+Humidity: 70.00
+Fans : 0
+Water level : 87
+LDR value is: 14
+LED : 1
+PH value:6.93
+Temperature: 25.90
+Humidity: 70.00
+Fans : 0
+Water level : 87
+LDR value is: 13
+LED : 1
+PH value:6.96
+Temperature: 25.90
+Humidity: 69.00
+Fans : 0
+Water level : 87
+LDR value is: 14
+LED : 1
+PH value:6.93

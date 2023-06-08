@@ -5,14 +5,14 @@
   #include <time.h>
   ////PINS
   #define POWER_PIN  3  // water
-  #define SIGNAL_PIN A5 // water
+  #define SIGNAL_PIN A4 // water
   #define SENSOR_MIN 0 // water
-  #define SENSOR_MAX 610 // water
+  #define SENSOR_MAX 740  // water
 
   const int LDRInput = A0; //Set Analog Input A0 for LDR.
   const int PH_SENSOR_PIN = A3;
   const int LED = 2;
-  const int WATER_SENSOR_PIN = A4;
+  const int WATER_SENSOR_PIN = A5;
 
   //// some variables
   float PH_CALIBRATION_VALUE = 21.34 - 0.7;
@@ -68,13 +68,14 @@
   ///////////////////////////////////////////////
   
 
-     Serial.print("Temperature: ");
+  Serial.print("Temperature: ");
   Serial.println(temperature);
   Serial.print("Humidity: ");
   Serial.println(humidity);
-    fanControl.update(temperature);
-    int waterLevel = map(value, SENSOR_MIN, SENSOR_MAX, 0, 100); // map the value to a percentage (0-100)
-     Serial.print("Water level : ");
+  fanControl.update(temperature);
+
+  int waterLevel = map(value, SENSOR_MIN, SENSOR_MAX, 0, 100); // map the value to a percentage (0-100)
+  Serial.print("Water level : ");
   Serial.println(waterLevel);
     
     if (true) {
