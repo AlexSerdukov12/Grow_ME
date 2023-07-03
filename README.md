@@ -16,24 +16,8 @@ Arduino Sensors:
 storage :
 local disk ,
 cloud:
-FireBase
+FireBase.
 
 
-Progress of Prototype
-![אב טיפוס](https://user-images.githubusercontent.com/73774191/233047725-821fae58-06fc-440c-944a-7b562d07ecae.jpg)
-
-08/05/2023 update
-
-![08 05 2023 update](https://user-images.githubusercontent.com/73774191/236766329-35e8e72f-be6c-40be-8a35-999a148492ae.jpg)
-
-10/05/2023 update - ADDED ESP32-CAM 
-
-![image](https://github.com/AlexSerdukov12/Grow_ME/assets/73774191/1ec0ac92-1294-4121-b36b-62b5c7adca91)
-
-08/06/2023 update - added firebase control , anayliz the data 
-
-![sensir data](https://github.com/AlexSerdukov12/Grow_ME/assets/73774191/908c4b45-477a-4101-9bc7-b80472ecf200)
-![stats](https://github.com/AlexSerdukov12/Grow_ME/assets/73774191/d0e00783-3da9-4120-9e34-e8041b40e045)
-
-
+![WhatsApp Image 2023-06-28 at 13 19 27](https://github.com/AlexSerdukov12/Grow_ME/assets/73774191/f04dce45-4dd3-48b6-bf1a-cf89b59be385)
 
