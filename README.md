@@ -1,3 +1,4 @@
+![WhatsApp Image 2023-06-28 at 13 19 27](https://github.com/AlexSerdukov12/Grow_ME/assets/73774191/f04dce45-4dd3-48b6-bf1a-cf89b59be385)
 # Grow_ME
 Smart hydroponic cultivation, using Arduino with various sensors.
 With a connection to the application in secure communication
@@ -19,5 +20,4 @@ cloud:
 FireBase.
 
 
-![WhatsApp Image 2023-06-28 at 13 19 27](https://github.com/AlexSerdukov12/Grow_ME/assets/73774191/f04dce45-4dd3-48b6-bf1a-cf89b59be385)
 
